@@ -1,0 +1,43 @@
+# Nombre : Cristian Aguirre Janampa 20150058I
+#Respuesta : Defino Vectorizacion y el reciclado con ejemplos
+
+# Vectorizacion (Vectorization)
+
+# - Una funcion R puede ser vectorizada cuando unas de sus tarea puede ser ejecutado paralelamente por otras tareas,es decir, puede ejecutar simultaneamente varias tareas y asi no perder tiempo a la hora de la ejecucion.
+### Por ejemplo :
+  
+```{r}
+n<-1:10
+  suma<-function(n){
+  su=0
+  for(i in n){
+    su=su+1/i
+  }
+  return (su)
+}
+suma(n)
+```
+
+# Forma vectorizada
+```{r}
+n<-10
+  sumavec<-function(n){
+  k<-1:n
+  su=0
+  su=su +1/k
+  return (sum(su))
+}
+sumavec
+```
+
+# Reciclado (Recycling)
+## Una funcion obedece la regla del reciclaje cuando recicla o recoje valores que ya fueron usados para una operacion anterior, R los vuelve a usar cuando se necesitan valores que no encuentra.
+## Por ejemplo 
+```{r}
+c(1,5,2,6)+c(1:6)
+
+c(1:5) + c(1:10)
+```
+
+
+
