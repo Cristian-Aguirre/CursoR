@@ -1,0 +1,28 @@
+Nombres: Cristian Aguirre Janampa
+Respuesta4: Responder las siguiente preguntas sobre R
+
+## A)
+¿Que produce los siguientes codigos y las propiedades que muestran?
+```{r}
+f1<-function(x={y<-1;2}, y=0){
+   x+y
+}
+f1()
+```
+Muestra el resultado 3 porque suma los valores de x=2 y y=1, esto es que y esta siendo definido en la funcion y no se le esta pasando valores.
+## B)
+¿Por que las siguientes dos invocaciones de lapply son equivalentes?
+```{r}
+trims<-c(0,0.1,0.2,0.5)
+x<-rcauchy(100)
+
+lapply(trims,function(trim) mean(x,trim = trim))
+lapply(trims,mean,x=x)
+```
+Ambos lapply muestran lo mismo ya que la funcion FUN que actua sobre trim es la misma, solo que esta escrita de manera diferente.
+
+## C)
+Considere el siguiente problema: Dada una matriz numerica X, determina el indice de la primera fila de numeros positivos que no contiene NA. Resuelve el problema usando for y la funcion apply().
+
+
+

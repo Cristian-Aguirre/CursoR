@@ -1,0 +1,41 @@
+Nombres : Cristian Aguirre Janampa
+Respuesta2: Corregir errores de los comandos dados
+
+## A)
+```{r}
+mtcars[-1:4,]
+```
+Error in xj[i] : 
+ solamente 0's pueden ser mezclados con subscritos negativos
+Con este comando eliminamos los 4 primeros datos, asi :
+```{r}
+mtcars[-(1:4),] 
+```
+## B)
+```{r}
+mtcars[mtcars$cyl<=5]
+```
+Produce un error ya que mtcars es de 2 dimensiones, de manera corregida :
+```{r}
+mtcars[mtcars$cyl<=5,]
+```
+## C)
+```{r}
+mtcars[mtcars$cyl==4 | 6,]
+```
+No se pueden combinar sentencias dentro de los corchetes, seria asi :
+```{r}
+mtcars[mtcars$cyl== 4 | mtcars$cyl== 6,]
+```
+Asi nos darias tabla de la columna cyl que tiene el valor de 4 o 6
+
+¿Por que x<-1:5; x[NA] produce 5 valores NA?
+Si queremos buscar un elemento del vector x, y nosotros no damos un indice apropiado, como en este caso NA, R siempre retornara NA, estamos dando un indice NA que no apunta a ningun valor de x.
+
+¿Por que mtcars[1:20] retorna error. Como difiere del similar mtcars[1:20,]?
+Porque mtcars es una tabla, por ende se tiene que decir que columnas debe mostrar, en R se tiene que especificar, para mostrar todas una "," es suficiente.
+
+¿Que hace df[is.na[df]]<-0. Como funciona?
+
+
+
